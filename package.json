@@ -1,0 +1,10 @@
+{
+  "name": "sites-service",
+  "scripts": {
+    "dev": "nuxt"
+  },
+  "dependencies": {
+    "element-ui": "^2.4.5",
+    "nuxt": "^1.4.2"
+  }
+}
