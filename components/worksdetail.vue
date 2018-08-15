@@ -1,28 +1,15 @@
 <template>
   <div class="container">
-    <!-- <el-carousel :interval="5000" arrow="always">
-      <el-carousel-item v-for="item in 4" :key="item">
-        <h3>{{ item }}</h3>
-      </el-carousel-item>
-    </el-carousel> -->
     <div class="content">
-      <!-- <div class="name">
-          <div class="imgLeft"></div>
-          <div class="font">推荐作品</div>
-          <div class="imgRight"></div>
-      </div>
-      <div class="interduce">
-        内涵丰富，充分鼓励个性发展
-      </div> -->
         <el-row>
-          <el-col :span="8" v-for="(o, index) in 10" :key="o" :offset="index > 0 ? 10 : 0">
+          <el-col :span="1" v-for="(o, index) in 16" :key="o" :offset="index > 0 ? 1 : 1">
             <el-card :body-style="{ padding: '0px' }">
-              <img class="image" src="../asset/1.png"/>
+              <img class="image" src="../asset/person.jpg"/>
                <div class="listDetail">
                   <span>好吃的汉堡</span>
                   <div class="listuser">
                       <div class="fl">
-                        <img src="../asset/2.gif" class="listuserimg"/>
+                        <img src="../asset/person.jpg" class="listuserimg"/>
                         <div class="listusername">Terry的天堂</div>
                       </div>
                       <div class="fr" style="margin-top:7px;">
@@ -36,9 +23,19 @@
             </el-card>
           </el-col>
         </el-row>
+        <el-pagination
+          background
+          layout="prev, pager, next"
+          :total="23">
+        </el-pagination>
     </div>
   </div>
 </template>
+<script>
+export default {
+  
+}
+</script>
 
 <style>
 .fl {
@@ -48,9 +45,8 @@
   float: right;
 }
 .content {
-  width: 1162px;
+  width: 1140px;
   margin: 0 auto;
-  margin-top: 54px;
   overflow: hidden;
 }
 .content .name {
@@ -60,7 +56,7 @@
 }
 .content .name .imgLeft {
   float: left;
-  background: url(../asset/word_left_icon.png) 0 0 no-repeat;
+  /* background: url(../asset/word_left_icon.png) 0 0 no-repeat; */
   background-size: 100% 100%;
   width: 56px;
   height: 26px;
@@ -73,7 +69,7 @@
 }
 .content .name .imgRight {
   float: left;
-  background: url(../asset/word_right_icon.png) 0 0 no-repeat;
+  /* background: url(../asset/word_right_icon.png) 0 0 no-repeat; */
   background-size: 100% 100%;
   width: 56px;
   height: 26px;
@@ -114,15 +110,18 @@
 }
 .el-col {
   width: 270px;
-  height: 287px;
-  margin-right: 15px;
-  margin-left: 5px;
-  margin-top: 24px;
+  height: 288px;
+  margin-right: 20px;
+  margin-left: 0px;
+  margin-top: 20px;
   overflow: hidden;
+}
+.el-col:nth-of-type(4n) {
+  margin-right: 0px;
 }
 .image {
   width: 270px;
-  height: 208px;
+  height: 206px;
 }
 .listDetail {
   padding: 2px 10px 9px 13px;
@@ -153,7 +152,7 @@
   height: 13px;
   float: left;
   background-size: 100% 100%;
-  background: url(../asset/like_icon.png) 0 0 no-repeat;
+  /* background: url(../asset/like_icon.png) 0 0 no-repeat; */
   margin-right: 4px;
 }
 .num {
@@ -166,8 +165,13 @@
   width: 18px;
   height: 14px;
   background-size: 100% 100%;
-  background: url(../asset/watch.png) 0 0 no-repeat;
+  /* background: url(../asset/watch.png) 0 0 no-repeat; */
   margin-right: 4px;
   float: left;
+}
+/* 分页模块样式 */
+.el-pagination {
+  margin-top: 30px;
+  margin-bottom: 60px;
 }
 </style>
